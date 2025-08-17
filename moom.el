@@ -4,7 +4,7 @@
 
 ;; Author: Takaaki ISHIKAWA <takaxp at ieee dot org>
 ;; Keywords: frames, faces, convenience
-;; Version: 1.6.8
+;; Version: 1.6.9
 ;; Maintainer: Takaaki ISHIKAWA <takaxp at ieee dot org>
 ;; URL: https://github.com/takaxp/Moom
 ;; Package-Requires: ((emacs "25.1"))
@@ -233,9 +233,7 @@ Configure this variable before activating moom mode.
 (defvar moom--virtual-grid nil)
 (defvar moom--screen-grid nil)
 (defvar moom--print-status t)
-(defvar moom--common-margin
-  (cond ((memq window-system '(ns mac)) '(23 0 0 0))
-	(t '(0 0 0 0))))
+(defvar moom--common-margin '(0 0 0 0))
 (defvar moom--pos-options '(:grid nil :bound nil)) ;; {screen,virtual}, {nil,t}
 (defvar moom--local-margin (cond ((eq window-system 'w32) '(0 9 -16 16))
 				 ((eq window-system 'x) '(-19 0 0 0))
@@ -1703,7 +1701,7 @@ The keybindings will be assigned only when Emacs runs in GUI."
 (defun moom-version ()
   "The release version of Moom."
   (interactive)
-  (let ((moom-release "1.6.8"))
+  (let ((moom-release "1.6.9"))
     (message "[Moom] v%s" moom-release)))
 
 ;;;###autoload
